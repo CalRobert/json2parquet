@@ -139,7 +139,7 @@ def load_json(filename, schema=None, date_format=None, field_aliases=None):
     Simple but inefficient way to load data from a newline delineated json file
     """
     json_data = []
-    with open(filename, "r") as f:
+    with open(filename, "r", encoding="utf8") as f:
         for line in f.readlines():
             if line:
                 json_data.append(json.loads(line))
